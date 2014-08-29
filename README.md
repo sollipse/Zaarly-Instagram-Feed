@@ -1,10 +1,10 @@
-# Paul's Project
+# Web Starter Template
 
+Base template for small projects using HTML, SASS, and CoffeeScript.
 
 ## Install
 * `npm install -g coffee-script`
 * `gem install sass`
 
 ## Dev
-* `coffee -w -o ./out -c ./coffee/main.coffee`
-* `sass scss/main.scss ./out/main.css`
+Run `bin/dev`
