@@ -1,0 +1,5 @@
+#!/bin/bash
+
+python -m SimpleHTTPServer 5000 &
+coffee -w -o ./out -c ./coffee/main.coffee &
+sass --watch ./scss/main.scss:./out/main.css &
