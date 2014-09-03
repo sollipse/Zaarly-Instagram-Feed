@@ -34,25 +34,43 @@ render_cards = (card_array, target_div) ->
 	html = ""
 	for card in card_array
 		card_template = ""
-		img = "<div id= 'image'>" + "<img src=" + card.img_url + "></div>"
+		img = "<div class= 'image'>" + "<img src=" + card.img_url + "></div>"
 		content = ""
 		if card.likes?
-			content = "You have " + card.likes.count + " likes!"
+			content = render_likes(card.likes.data)
 		else
 			content = "No one likes you"
-		likes_bar = "<div id= 'likes'>" + content + "</div>"
+		likes_bar = "<div class='likes'><div class='heart'> &nbsp </div>" + content + "</div>"
 
 		if card.comments?
-			content = "You have some comments"
+			content = render_comments(card.comments.data)
 		else
-			content = "No one found you interesting enough to talk to."
-		comments_box = "<div id= 'comments'>" + content + "</div>"
-		card_template = "<div id= 'card'>"+ img + likes_bar + comments_box + "</div>"
-		html += card_template
-		console.log card_template
+			content = "<div class= 'no-friends'> No one found you interesting enough to talk to. </div>"
+		comments_box = "<div class= 'comments'>" + content + "<input class= 'words' type='text' placeholder='Write a comment...'></div>"
+		card_template = "<div class= 'card'>"+ img + likes_bar + comments_box + "</div>"
+		html += card_template + "<br><br>"
+	html = "<div class= cardbar>" + html + "</div>"
 	target_div.innerHTML = html
 
+render_comments = (comments) ->
+	comment_html = ""
+	for comment in comments
+		comment_html += "<div class= 'single-comment'><img class= 'profile-pic' src='" + comment.from.profile_picture + "'>" + "<div class= 'highlighted-text'>" + comment.from.username + "</div>" + comment.text + "</div>"
+	comment_html
 
+render_likes = (likes) ->
+	usernames = ""
+	addendum = ""
+	if likes.length > 3
+		last_few = likes.slice(Math.max(likes.length - 3, 1))
+		addendum = "and " + (likes.length-3) + " others"
+	else
+		last_few = likes
+	for like in likes
+		usernames += "<div class= 'highlighted-text'>" + like.username + ", </div> "
+	addendum += " like this"
+	usernames = "<div class= 'user-list'>" + usernames + addendum + "</div>"
+	usernames
 
 		
 
