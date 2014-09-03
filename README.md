@@ -11,6 +11,6 @@ Run `bin/dev`
 
 ## Sass Breakdown
 
-This is a simple copy of instagram's feed. Card elements are broken down into * 'image', *'likes' and *'comment' components. All cards are overlaid on the cardbar. 
+This is a simple copy of instagram's feed. Card elements are broken down into * `image`, * `likes` and * `comment` components. All cards are overlaid on the cardbar. 
 
 Zaarlbox and zaarlogo are not essential, just a cute attempt to ape the original logo.
