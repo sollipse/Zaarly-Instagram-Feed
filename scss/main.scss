@@ -5,8 +5,19 @@ body {
 	box-shadow: inset 0 0 0 1000px rgba(255,255,255,.7);
 }
 
-.zaarlbar {
+.body-content {
+	padding-top: 58px;
+}
 
+.error-message {
+	text-align: center;
+	padding: 20px;
+	font-size: 30px;
+	color: #555;
+	background-color: transparent;
+}
+
+.zaarlbar {
 	position: fixed;
 	height: 60px;
 	text-align: center;
@@ -33,7 +44,7 @@ body {
 }
 
 .cardbar {
-	padding-top: 58px;
+	margin-top: 50px;
 	background-color: rgba(0,0,0,0.1);
 	width: 710px;
 	margin: 0 auto;
@@ -42,6 +53,8 @@ body {
 	border-bottom: 0;
 	
 	.card {
+		display: block;
+		margin-top: 50px;
 		border: 1px solid silver;
 		margin: 0 auto;
 		outline: #FFF;
@@ -59,7 +72,12 @@ body {
 			display: inline-block;
 		}
 
+		.instagram-image{
+			max-width: 641px;
+		}
+
 		.likes {
+			line-height: 41px;
 			color: #aaa;
 			text-shadow: 0 1px 0 rgba(255,255,255,.8);
 			position: relative;
@@ -73,32 +91,40 @@ body {
 			text-overflow: ellipsis;
 			overflow: hidden;
 
-			.highlighted-text {
-				line-height: 41px;
-			}
 			.heart {
+				width: 47px;
+				background: url(//d36xtkk24g8jdx.cloudfront.net/bluebar/47dfbd4/images/feed/feed-assets.png) no-repeat 8px 7px;
 				float: left;
-				width: 60px;
 				height: 40px;
-				background: url(//d36xtkk24g8jdx.cloudfront.net/bluebar/47dfbd4/images/feed/feed-assets.png) no-repeat 15px 7px;
+				border-right: 1px solid #ddd;
+				box-shadow: 1px 0 0 rgba(255,255,255,.9);
+				margin-right: 10px;
 			}
 
 		}
 
 		.comments {
+
 			background: #fafafa;
 			padding: 15px 0px 15px 15px;
 			.single-comment{
-				.highlighted-text{
+				.highlighted-text-commenter{
+					color: #3f729b;
+					font-weight: 500;
+					display: inline-block;
 					margin-right: 10px;
 				}
 				padding-bottom: 15px;
 			}
 			.profile-pic {
+				float: left;
 				height: 30px;
 				width: 30px;
 				margin-right: 10px;
 
+			}
+			.comment-text {
+				padding-left: 42px;
 			}
 			.words {
 				width: 586px;
@@ -109,6 +135,7 @@ body {
 			}
 		}
 		.no-friends {
+			color: #aaa;
 			margin-bottom: 14px !important;
 		}
 	}
